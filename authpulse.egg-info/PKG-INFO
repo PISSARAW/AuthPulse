@@ -1,3 +1,29 @@
+Metadata-Version: 2.4
+Name: authpulse
+Version: 0.1.0
+Summary: RFC 6238 Time-based One-Time Password (TOTP) generator and verifier
+License: MIT
+Project-URL: Repository, https://github.com/PISSARAW/AuthPulse
+Project-URL: Bug Tracker, https://github.com/PISSARAW/AuthPulse/issues
+Keywords: totp,otp,2fa,mfa,authentication,rfc6238
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Security
+Classifier: Topic :: Security :: Cryptography
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: qr
+Requires-Dist: qrcode[pil]>=7.4; extra == "qr"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-cov>=4.1; extra == "dev"
+Requires-Dist: qrcode[pil]>=7.4; extra == "dev"
+
 # AuthPulse
 
 **AuthPulse** is a pure-Python implementation of the **Time-based One-Time Password (TOTP)** algorithm defined in [RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238). It is compatible with popular authenticator apps such as Google Authenticator, Aegis, and Authy.

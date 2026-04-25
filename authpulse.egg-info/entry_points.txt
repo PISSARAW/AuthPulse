@@ -1,0 +1,2 @@
+[console_scripts]
+authpulse = authpulse.cli:main
