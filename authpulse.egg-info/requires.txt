@@ -1,8 +1,0 @@
-
-[dev]
-pytest>=7.4
-pytest-cov>=4.1
-qrcode[pil]>=7.4
-
-[qr]
-qrcode[pil]>=7.4
