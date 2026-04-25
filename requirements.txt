@@ -1,0 +1,8 @@
+# Core — no external dependencies required for TOTP generation/verification
+
+# Optional: QR code generation
+qrcode[pil]>=7.4
+
+# Development / testing
+pytest>=7.4
+pytest-cov>=4.1

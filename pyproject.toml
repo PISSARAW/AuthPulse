@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "authpulse"
+version = "0.1.0"
+description = "RFC 6238 Time-based One-Time Password (TOTP) generator and verifier"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["totp", "otp", "2fa", "mfa", "authentication", "rfc6238"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+]
+
+# Core dependencies — only stdlib is strictly required.
+# qrcode[pil] is optional and only needed for QR code generation.
+dependencies = []
+
+[project.optional-dependencies]
+qr = ["qrcode[pil]>=7.4"]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "qrcode[pil]>=7.4",
+]
+
+[project.scripts]
+authpulse = "authpulse.cli:main"
+
+[project.urls]
+Repository = "https://github.com/PISSARAW/AuthPulse"
+"Bug Tracker" = "https://github.com/PISSARAW/AuthPulse/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["authpulse*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.coverage.run]
+source = ["authpulse"]
+omit = ["tests/*"]
